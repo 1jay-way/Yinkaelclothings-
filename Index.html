@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover quality ready-made clothing, shoes, bags and accessories at Yinkael Int'l Clothings. Retail and wholesale available with nationwide delivery across Nigeria.">
+  <meta name="theme-color" content="#151515">
+  <title>Yinkael Int’l Clothings | Fashion & Lifestyle</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- ANNOUNCEMENT BAR -->
+  <div class="announcement">
+    Quality Fashion · Retail & Wholesale Available · Nationwide Delivery Across Nigeria
+  </div>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <a href="#" class="brand">
+      <span class="brand-name">YINKAEL</span>
+      <span class="brand-subtitle">INT'L CLOTHINGS</span>
+    </a>
+    <button
+      class="mobile-menu-btn"
+      id="mobileMenuBtn"
+      type="button"
+      aria-label="Open navigation"
+      aria-expanded="false"
+    >
+      ☰
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <a href="#home">Home</a>
+      <a href="#shop">Shop</a>
+      <a href="#categories">Categories</a>
+      <a href="#wholesale">Wholesale</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-trigger" id="openCartBtn" type="button">
+      <span>Bag</span>
+      <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <!-- HERO SECTION -->
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">WELCOME TO YINKAEL INT'L CLOTHINGS</p>
+        <h1>
+          Style that<br>
+          speaks <em>for you.</em>
+        </h1>
+        <p class="hero-copy">
+          Discover a beautiful collection of clothing, footwear,
+          bags and accessories carefully selected to complement
+          your everyday style. We deliver nationwide across all states within Nigeria.
+        </p>
+        <a href="#shop" class="button button-gold">
+          Explore Collection
+        </a>
+      </div>
+      <div class="hero-mark">
+        <span>Y</span>
+        <small>YINKAEL</small>
+      </div>
+    </section>
+
+    <!-- CATEGORY SECTION -->
+    <section id="categories" class="category-strip">
+      <button
+        class="category-chip active"
+        type="button"
+        data-category="All"
+      >
+        All Products
+      </button>
+      <button
+        class="category-chip"
+        type="button"
+        data-category="Clothing"
+      >
+        Clothing
+      </button>
+      <button
+        class="category-chip"
+        type="button"
+        data-category="Shoes"
+      >
+        Shoes
+      </button>
+      <button
+        class="category-chip"
+        type="button"
+        data-category="Bags"
+      >
+        Bags
+      </button>
+      <button
+        class="category-chip"
+        type="button"
+        data-category="Accessories"
+      >
+        Accessories
+      </button>
+      <button
+        class="category-chip"
+        type="button"
+        data-category="Fragrance"
+      >
+        Fragrances
+      </button>
+    </section>
+
+    <!-- SHOP SECTION -->
+    <section class="shop-section" id="shop">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">THE YINKAEL COLLECTION</p>
+          <h2>Find Your Style</h2>
+          <p class="muted" id="resultSummary">
+            Explore our latest collection.
+          </p>
+        </div>
+        <div class="shop-controls">
+          <label class="search-box">
+            <span class="sr-only">Search products</span>
+            <input
+              type="search"
+              id="searchInput"
+              placeholder="Search products..."
+              autocomplete="off"
+            >
+            <span aria-hidden="true">⌕</span>
+          </label>
+          <label>
+            <span class="sr-only">Sort products</span>
+            <select id="sortSelect">
+              <option value="featured">Featured</option>
+              <option value="name">Name</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- PRODUCTS ARE RENDERED HERE BY app.js -->
+      <div class="product-grid" id="productGrid">
+        <div class="empty-state">
+          <h3>Our Collection</h3>
+          <p>Our products will appear here shortly.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHOLESALE SECTION -->
+    <section class="wholesale-section" id="wholesale">
+      <div>
+        <p class="eyebrow">FOR BUSINESS OWNERS & RESELLERS</p>
+        <h2>Looking to Buy Wholesale?</h2>
+        <p>
+          Yinkael Int'l Clothings offers retail and wholesale
+          purchasing opportunities with special discounts for wholesale customers.
+          Enjoy access to quality fashion products with a minimum wholesale order
+          of two bundles, delivered to all states within Nigeria.
+        </p>
+      </div>
+      <a
+        href="https://wa.me/2347083251232"
+        class="button button-dark"
+        id="wholesaleWhatsApp"
+        target="_blank"
+        rel="noopener"
+      >
+        Ask About Wholesale
+      </a>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+      <div>
+        <p class="eyebrow">WE WOULD LOVE TO HEAR FROM YOU</p>
+        <h2>Let's Stay Connected.</h2>
+        <p>
+          Have questions about a product, an order or wholesale
+          purchases? Contact us through any of the channels below.
+          We deliver across all states in Nigeria.
+        </p>
+      </div>
+      <div class="contact-details">
+        <a href="https://wa.me/2347083251232"
+           target="_blank"
+           rel="noopener">
+          WhatsApp: +234 708 325 1232
+        </a>
+        <a href="tel:+2348035170738">
+          Phone: +234 803 517 0738
+        </a>
+        <a href="mailto:olufunkee@yahoo.co.uk">
+          Email: olufunkee@yahoo.co.uk
+        </a>
+        <span>
+          Address: 101 Kirikiri Road, Willmer Busstop,
+          Olodi Apapa, Lagos.
+        </span>
+        <a
+          href="https://www.tiktok.com/@yinkaelclothings"
+          target="_blank"
+          rel="noopener"
+        >
+          TikTok: @yinkaelclothings
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a href="#home" class="brand brand-footer">
+      <span class="brand-name">YINKAEL</span>
+      <span class="brand-subtitle">INT'L CLOTHINGS</span>
+    </a>
+    <p>
+      © <span id="year"></span> Yinkael Int'l Clothings.
+      All rights reserved.
+    </p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+
+  <!-- FULL-SCREEN PRODUCT VIEWER -->
+  <div
+    class="modal-backdrop"
+    id="productModal"
+    aria-hidden="true"
+  >
+    <div class="product-modal">
+      <button
+        class="icon-button modal-close"
+        id="closeProductModal"
+        type="button"
+        aria-label="Close product"
+      >
+        &times;
+      </button>
+      <div class="modal-image-wrap">
+        <button
+          class="gallery-arrow gallery-prev"
+          id="prevProduct"
+          type="button"
+          aria-label="Previous product"
+        >
+          ‹
+        </button>
+        <div
+          class="product-image modal-product-image"
+          id="modalImage"
+        >
+          <div class="image-placeholder">
+            <span>Y</span>
+            <small>YINKAEL</small>
+          </div>
+        </div>
+        <button
+          class="gallery-arrow gallery-next"
+          id="nextProduct"
+          type="button"
+          aria-label="Next product"
+        >
+          ›
+        </button>
+      </div>
+      <div class="modal-info">
+        <p class="eyebrow" id="modalCategory">
+          PRODUCT COLLECTION
+        </p>
+        <h2 id="modalProductName">
+          Product Name
+        </h2>
+        <p class="modal-price" id="modalPrice">
+          Price
+        </p>
+        <p class="modal-description" id="modalDescription">
+          Product description will appear here.
+        </p>
+        <label class="field-label" for="purchaseOption">
+          Select Purchase Option
+        </label>
+        <select id="purchaseOption">
+          <option value="">Select an option</option>
+        </select>
+        <div class="quantity-row">
+          <label class="field-label" for="modalQuantity">
+            Quantity
+          </label>
+          <div class="quantity-control">
+            <button
+              id="modalQtyMinus"
+              type="button"
+              aria-label="Decrease quantity"
+            >
+              −
+            </button>
+            <input
+              type="number"
+              id="modalQuantity"
+              value="1"
+              min="1"
+              inputmode="numeric"
+            >
+            <button
+              id="modalQtyPlus"
+              type="button"
+              aria-label="Increase quantity"
+            >
+              +
+            </button>
+          </div>
+        </div>
+        <p class="helper-text" id="optionHint">
+          Select your preferred purchase option.
+        </p>
+        <button
+          class="button button-gold full-width"
+          id="modalAddToCart"
+          type="button"
+        >
+          Add to Shopping Bag
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROFESSIONAL SHOPPING CART -->
+  <div
+    class="drawer-backdrop"
+    id="cartBackdrop"
+    aria-hidden="true"
+  >
+    <aside class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+      <!-- Header -->
+      <div class="drawer-heading">
+        <div>
+          <p class="eyebrow">YINKAEL CURATED BAG</p>
+          <h2>Shopping Bag <span class="bag-count-pill" id="drawerBagCount">0</span></h2>
+        </div>
+        <button
+          class="icon-button"
+          id="closeCartBtn"
+          type="button"
+          aria-label="Close shopping bag"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- Free Delivery Progress Bar -->
+      <div class="delivery-progress-box" id="deliveryProgressBox">
+        <div class="delivery-progress-text">
+          <span class="gold-sparkle">✦</span>
+          <p id="deliveryProgressMsg">Add <strong>₦50,000</strong> more for <strong>Free Lagos Delivery</strong></p>
+        </div>
+        <div class="delivery-track">
+          <div class="delivery-fill" id="deliveryProgressFill" style="width: 0%;"></div>
+        </div>
+      </div>
+
+      <!-- STEP 1: Cart Items View -->
+      <div class="cart-items" id="cartItems">
+        <div class="empty-state">
+          <div class="empty-cart-icon">♧</div>
+          <h3>Your bag is empty</h3>
+          <p>Explore our collection and add something you love.</p>
+        </div>
+      </div>
+
+      <!-- STEP 2: Delivery Details Form -->
+      <div class="checkout-step-panel" id="checkoutStepPanel">
+        <div class="checkout-step-top">
+          <button type="button" class="back-to-bag-btn" id="backToBagBtn">
+            ← Back to Bag
+          </button>
+          <span class="step-indicator">Step 2 of 2 · Delivery Info</span>
+        </div>
+
+        <form id="whatsappOrderForm" class="delivery-form" novalidate>
+          <div class="form-row">
+            <label for="orderName">Full Name *</label>
+            <input type="text" id="orderName" placeholder="e.g. Zainab Balogun" required>
+          </div>
+
+          <div class="form-two-col">
+            <div class="form-row">
+              <label for="orderPhone">Phone Number *</label>
+              <input type="tel" id="orderPhone" placeholder="0803 123 4567" required>
+            </div>
+            <div class="form-row">
+              <label for="orderState">Delivery State *</label>
+              <select id="orderState" required>
+                <option value="">Select State</option>
+                <option value="Lagos">Lagos</option>
+                <option value="Abuja (FCT)">Abuja (FCT)</option>
+                <option value="Ogun">Ogun</option>
+                <option value="Oyo">Oyo</option>
+                <option value="Rivers">Rivers</option>
+                <option value="Delta">Delta</option>
+                <option value="Anambra">Anambra</option>
+                <option value="Enugu">Enugu</option>
+                <option value="Edo">Edo</option>
+                <option value="Kano">Kano</option>
+                <option value="Kaduna">Kaduna</option>
+                <option value="Kwara">Kwara</option>
+                <option value="Osun">Osun</option>
+                <option value="Ondo">Ondo</option>
+                <option value="Other State">Other Nigerian State</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-two-col">
+            <div class="form-row">
+              <label for="orderCity">City / Area *</label>
+              <input type="text" id="orderCity" placeholder="e.g. Lekki, Ikeja, Wuse" required>
+            </div>
+            <div class="form-row">
+              <label for="orderLandmark">Nearest Bus Stop</label>
+              <input type="text" id="orderLandmark" placeholder="e.g. Willmer Bus Stop">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <label for="orderAddress">Delivery Address *</label>
+            <input type="text" id="orderAddress" placeholder="House number & street name" required>
+          </div>
+
+          <div class="form-row">
+            <label for="orderNotes">Size, Color or Order Notes (Optional)</label>
+            <input type="text" id="orderNotes" placeholder="e.g. Size 42, Black preferred">
+          </div>
+
+          <button type="submit" class="button button-gold full-width" id="confirmWhatsAppBtn">
+            Complete Order on WhatsApp
+          </button>
+        </form>
+      </div>
+
+      <!-- Cart Footer & Financial Summary -->
+      <div class="cart-footer" id="cartFooter">
+        <!-- Promo Code Input -->
+        <div class="promo-box">
+          <input type="text" id="promoCodeInput" placeholder="Promo code (e.g. YINKAEL5)" aria-label="Promo code">
+          <button type="button" id="applyPromoBtn" class="promo-apply-btn">Apply</button>
+        </div>
+        <p class="promo-status" id="promoStatus"></p>
+
+        <!-- Order Summary Breakdown -->
+        <div class="cart-summary-block">
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <span id="cartSubtotal">₦0</span>
+          </div>
+          <div class="summary-row discount-row" id="promoDiscountRow" style="display: none;">
+            <span>Discount (<span id="promoTag"></span>)</span>
+            <span id="cartDiscountAmount">-₦0</span>
+          </div>
+          <div class="summary-row">
+            <span>Delivery (Nigeria-wide)</span>
+            <span class="delivery-note" id="cartDeliveryNote">Confirmed via WhatsApp</span>
+          </div>
+          <div class="cart-total">
+            <span>Estimated Total</span>
+            <strong id="cartTotal">₦0</strong>
+          </div>
+        </div>
+
+        <button
+          class="button button-dark full-width"
+          id="checkoutBtn"
+          type="button"
+        >
+          Proceed to Delivery Details →
+        </button>
+
+        <div class="cart-trust-strip">
+          <span>🔒 Fast WhatsApp Confirmation</span>
+          <span>•</span>
+          <span>🚚 Nationwide Delivery</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- NOTIFICATION -->
+  <div
+    class="toast"
+    id="toast"
+    role="status"
+    aria-live="polite"
+  ></div>
+
+  <!-- JAVASCRIPT FILES -->
+  <script src="products.js"></script>
+  <script src="app.js"></script>
+
+  <!-- Real-Time Firebase Inventory Sync -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      onSnapshot
+    } from "https://www.gstatic.com/firebasejs/10.14.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyCQ2LnOYMg3PeTPWHtFoyoaTeE9H4SV9eg",
+      authDomain: "yinkael2.firebaseapp.com",
+      projectId: "yinkael2",
+      storageBucket: "yinkael2.firebasestorage.app",
+      messagingSenderId: "66875387738",
+      appId: "1:66875387738:web:ca6551f63231d821e1cd63"
+    };
+
+    const STORE_CACHE_KEY = "yinkael_store_products_cache";
+
+    // Load from cache immediately for instant render performance
+    try {
+      const cached = localStorage.getItem(STORE_CACHE_KEY);
+      if (cached) {
+        const parsed = JSON.parse(cached);
+        if (parsed.length > 0) {
+          window.YINKAEL_PRODUCTS = parsed;
+          if (window.renderYinkaelStore) window.renderYinkaelStore();
+        }
+      }
+    } catch (e) {}
+
+    // Listen for real-time updates from Firestore
+    try {
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      onSnapshot(collection(db, "products"), (snapshot) => {
+        const firebaseProducts = snapshot.docs.map(document => ({
+          ...document.data(),
+          id: document.id
+        }));
+
+        if (firebaseProducts.length > 0) {
+          window.YINKAEL_PRODUCTS = firebaseProducts;
+          try {
+            localStorage.setItem(STORE_CACHE_KEY, JSON.stringify(firebaseProducts));
+          } catch (e) {}
+
+          if (window.renderYinkaelStore) {
+            window.renderYinkaelStore();
+          }
+          console.log("Products synced in real-time from Firebase:", firebaseProducts.length);
+        }
+      }, (error) => {
+        console.error("Firebase real-time sync error:", error);
+      });
+    } catch (error) {
+      console.error("Firebase initialization error:", error);
+    }
+  </script>
+</body>
+</html>
