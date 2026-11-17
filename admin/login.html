@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | YINKAEL INT L CLOTHINGS</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="login-header">
+        <h1>YINKAEL INT L</h1>
+        <p>Administrator Portal</p>
+      </div>
+      <form id="loginForm">
+        <div class="form-group">
+          <label class="form-label" for="email">Admin Email</label>
+          <input type="email" id="email" class="form-input" required autocomplete="email" placeholder="admin@yinkael.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="password">Password</label>
+          <input type="password" id="password" class="form-input" required autocomplete="current-password" placeholder="Enter your password">
+        </div>
+        <div id="loginError" class="form-group" style="color: var(--color-danger); font-size: 0.85rem; display: none;"></div>
+        <button type="submit" id="loginBtn" class="btn btn-gold full-width">
+          Sign In to Dashboard
+        </button>
+      </form>
+    </div>
+  </div>
+  <div id="toast" class="admin-toast"></div>
+<script type="module" src="admin.js"></script>
+</body>
+</html>
