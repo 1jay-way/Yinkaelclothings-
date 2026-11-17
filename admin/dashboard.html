@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | YINKAEL INT L CLOTHINGS</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="admin-header">
+    <div class="brand-title">YINKAEL <span>ADMIN</span></div>
+    <div class="admin-nav-actions">
+      <a href="../index.html" class="btn btn-outline-light btn-sm" target="_blank">View Store</a>
+      <button type="button" id="logoutBtn" class="btn btn-outline-light btn-sm">Sign Out</button>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="admin-container">
+    <!-- Stats Overview -->
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-title">Total Products</div>
+        <div class="stat-value" id="totalProductsCount">0</div>
+      </div>
+    </section>
+
+    <!-- Actions Bar -->
+    <section class="dashboard-actions">
+      <div class="search-box">
+        <input type="text" id="adminSearchInput" class="form-input" placeholder="Search products by name, category...">
+      </div>
+      <button type="button" id="openAddModalBtn" class="btn btn-gold">+ Add New Product</button>
+    </section>
+
+    <!-- Product Listing Section -->
+    <section class="products-section">
+      <div class="section-header">
+        <h2>Inventory Management</h2>
+        <span id="resultCountBadge" style="font-size: 0.85rem; color: #666;">0 items</span>
+      </div>
+      <div id="adminProductList" class="admin-product-list">
+        <!-- Products will be injected here dynamically -->
+        <div class="empty-state">Loading inventory...</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Product Modal (Create / Edit) -->
+  <div id="productModal" class="modal-backdrop" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2 id="modalTitle">Add New Product</h2>
+        <button type="button" id="closeModalBtn" class="close-modal-btn">&times;</button>
+      </div>
+      <form id="productForm">
+        <div class="modal-body">
+          <input type="hidden" id="productId">
+          <div class="form-group">
+            <label class="form-label" for="productName">Product Name *</label>
+            <input type="text" id="productName" class="form-input" required placeholder="e.g., Luxury Silk Evening Dress">
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="productAudience">Audience *</label>
+              <select id="productAudience" class="form-select" required>
+                <option value="Men">Men</option>
+                <option value="Women">Women</option>
+                <option value="Children">Children</option>
+                <option value="Unisex">Unisex</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="productCategory">Category *</label>
+              <select id="productCategory" class="form-select" required>
+                <option value="Clothing">Clothing</option>
+                <option value="Shoes">Shoes</option>
+                <option value="Bags">Bags</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Fragrance">Fragrance</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="productDescription">Description</label>
+            <textarea id="productDescription" class="form-textarea" rows="3" placeholder="Enter material, available sizes, colours, or details..."></textarea>
+          </div>
+
+          <hr style="border:0; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+          <h3 style="font-size: 1rem; margin-bottom: 1rem;">Pricing & Purchase Options (₦)</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="retailPrice">Retail Price (Per Piece)</label>
+              <input type="number" id="retailPrice" class="form-input" min="0" step="1" placeholder="e.g. 15000">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="wholesalePrice">Wholesale Price (Per Bundle)</label>
+              <input type="number" id="wholesalePrice" class="form-input" min="0" step="1" placeholder="e.g. 120000">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="wholesaleMinQty">Minimum Wholesale Bundles</label>
+              <input type="number" id="wholesaleMinQty" class="form-input" min="2" value="2" readonly>
+              <small style="color: #666; font-size: 0.75rem;">Business requirement: Minimum 2 bundles</small>
+            </div>
+          </div>
+
+          <hr style="border:0; border-top: 1px solid var(--color-border); margin: 1.5rem 0;">
+          <h3 style="font-size: 1rem; margin-bottom: 1rem;">Product Image (Cloudinary)</h3>
+          <div class="form-group">
+            <label class="form-label" for="imageFile">Upload Image File</label>
+            <input type="file" id="imageFile" class="form-input" accept="image/*">
+            <div id="uploadProgress" style="font-size: 0.85rem; color: var(--color-gold); margin-top: 0.5rem; display: none;">Uploading to Cloudinary...</div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="productImage">Or Image URL</label>
+            <input type="url" id="productImage" class="form-input" placeholder="https://res.cloudinary.com/...">
+          </div>
+          <div id="imagePreviewContainer" style="margin-top: 0.75rem; display: none;">
+            <img id="imagePreview" src="" alt="Preview" style="max-width: 120px; max-height: 120px; border-radius: 4px; object-fit: cover; border: 1px solid var(--color-border);">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="cancelModalBtn" class="btn btn-secondary">Cancel</button>
+          <button type="submit" id="saveProductBtn" class="btn btn-gold">Save Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="admin-toast"></div>
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
