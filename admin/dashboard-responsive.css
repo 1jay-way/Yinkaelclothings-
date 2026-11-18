@@ -1,0 +1,52 @@
+/* Keep inventory rows within the viewport, including long product names and prices. */
+.admin-product-item {
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.admin-product-info {
+  flex: 1 1 240px;
+  min-width: 0;
+}
+
+.admin-product-details {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.admin-product-prices {
+  flex: 0 1 150px;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.admin-product-buttons {
+  flex: 0 1 auto;
+  min-width: 0;
+  flex-wrap: wrap;
+}
+
+.admin-product-buttons .btn {
+  min-width: 0;
+  white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+  .admin-product-item {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .admin-product-info,
+  .admin-product-prices,
+  .admin-product-buttons {
+    width: 100%;
+  }
+
+  .admin-product-prices,
+  .admin-product-buttons {
+    padding-left: 0;
+  }
+}
